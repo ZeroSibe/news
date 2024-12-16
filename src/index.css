@@ -1,68 +1,152 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url("https://fonts.googleapis.com/css2?family=Lemon&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lemon&family=Lexend:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #777;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+  font-size: 16px;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: Raleway;
+  min-width: 360px;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+main {
+  line-height: 1.5rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 1rem;
+  background-color: black;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.nav li {
+  display: inline;
+}
+
+.nav-link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.main-nav {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: lighter;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.main-nav li {
+  padding: 0 5%;
+}
+
+.app-name {
+  text-align: center;
+  font-size: 4rem;
+}
+
+.app-name-large {
+  font-size: 6rem;
+}
+
+.content-section {
+  margin: 1rem;
+  font-family: "Lexend", sans-serif;
+  font-style: normal;
+  font-size: 0.88rem;
+}
+
+.transparent-border {
+  background-color: hsla(0, 0%, 0%, 0.061);
+  padding: 5rem;
+  border-radius: 30px;
+  border: thick double black;
+  box-shadow: 0rem 1rem 1rem hsl(100, 27%, 2%);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 0.2rem;
+  text-align: center;
+}
+
+.container-header {
+  color: #333;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 14rem;
+  margin-bottom: 5rem;
+  line-height: 2rem;
+}
+
+.section-header {
+  color: #333;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.article-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+.article-list li {
+  margin: 2rem;
+  background-color: hsla(0, 0%, 0%, 0.061);
+  border-radius: 30px;
+  border: solid black;
+  width: 300px;
+  width: 100%;
+}
+
+.article-list li:hover {
+  box-shadow: 0rem 1rem 1rem hsl(100, 27%, 2%);
+}
+
+.article-list img {
+  width: 100%;
+  border: solid white;
+  border-radius: 20px;
+}
+
+.horizontal-align {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 0.88rem;
+}
+
+@media only screen and (min-width: 360px) {
+  html {
+    font-size: 18px;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+
+  .article-list li {
+    max-width: 800px;
   }
 }
