@@ -1,13 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Lemon&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lemon&family=Lexend:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
+:root {
+  --text-colour: #787878;
+  --header-colour: #000000;
+  --header-txt-colour: #ffffff;
+  --clr-main-font: #333333;
+  --clr-light-grey: #4f4f4f;
+  --clr-med-grey: #ffffff4d;
+  --clr-blue: #0000ff;
+  --clr-light-blue: #6b7b92;
+}
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #777;
+  color: var(--text-colour);
 }
 
 html {
@@ -22,6 +33,7 @@ body {
 
 main {
   line-height: 1.5rem;
+  margin-top: 12rem;
 }
 
 .main-header {
@@ -30,7 +42,7 @@ main {
   left: 0;
   width: 100%;
   padding-bottom: 1rem;
-  background-color: black;
+  background-color: var(--header-colour);
 }
 
 .nav li {
@@ -40,20 +52,29 @@ main {
 .nav-link {
   display: inline-block;
   text-decoration: none;
-  color: white;
+  color: var(--header-txt-colour);
   padding: 0.5rem;
 }
 
-.nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+.nav-link:hover,
+.nav-link:focus-visible {
+  background-color: var(--clr-med-grey);
 }
 
 .main-nav {
   text-align: center;
   font-size: 1.1rem;
   font-weight: lighter;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.grey-border {
+  border-top: 1px solid var(--clr-med-grey);
+  border-bottom: 1px solid var(--clr-med-grey);
+}
+
+.red-border {
+  border-top: 4px solid red;
+  border-bottom: 4px solid red;
 }
 
 .main-nav li {
@@ -65,10 +86,6 @@ main {
   font-size: 4rem;
 }
 
-.app-name-large {
-  font-size: 6rem;
-}
-
 .content-section {
   margin: 1rem;
   font-family: "Lexend", sans-serif;
@@ -76,8 +93,12 @@ main {
   font-size: 0.88rem;
 }
 
+.content-section p {
+  color: var(--clr-light-grey);
+}
+
 .transparent-border {
-  background-color: hsla(0, 0%, 0%, 0.061);
+  background-color: #00000010;
   padding: 5rem;
   border-radius: 30px;
   border: thick double black;
@@ -92,7 +113,7 @@ main {
 }
 
 .container-header {
-  color: #333;
+  color: var(--clr-main-font);
   text-align: center;
   font-size: 2rem;
   margin-top: 14rem;
@@ -101,10 +122,25 @@ main {
 }
 
 .section-header {
-  color: #333;
+  color: var(--clr-main-font);
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 1rem;
+}
+
+.article-header {
+  color: var(--clr-main-font);
+  text-align: start;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+}
+.article-para {
+  color: var(--clr-main-font);
+  font-size: 1rem;
+  margin-top: 2rem;
+  line-height: 1.5rem;
 }
 
 .article-list {
@@ -123,11 +159,12 @@ main {
   width: 100%;
 }
 
-.article-list li:hover {
+.article-list li:hover,
+.article-list li:focus-visible {
   box-shadow: 0rem 1rem 1rem hsl(100, 27%, 2%);
 }
 
-.article-list img {
+.article-img {
   width: 100%;
   border: solid white;
   border-radius: 20px;
@@ -135,10 +172,44 @@ main {
 
 .horizontal-align {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  margin-left: 0.5rem;
   font-size: 0.88rem;
+}
+
+.nav-btn {
+  margin-bottom: 1rem;
+  background: none;
+  border: none;
+  color: var(--clr-blue);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.article-btns button {
+  margin-right: 0.5rem;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: var(--header-txt-colour);
+  color: var(--header-colour);
+}
+
+.article-btns button:hover,
+.article-btns button:focus-visible {
+  background-color: var(--clr-light-blue);
+}
+
+.title-link {
+  text-decoration: none;
+}
+
+.title-link:hover,
+.title-link:focus-visible {
+  text-decoration: underline;
 }
 
 @media only screen and (min-width: 360px) {

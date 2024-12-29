@@ -6,11 +6,7 @@ News is a social news aggregation, web content rating and discussion website. Ne
 
 ## ToDo
 
-4. CORE: View a list of all articles
-
-5. CORE: View an individual article
-
-6. CORE: View a list of comments associated with an article
+6. CORE: View a list of comments associated with an article [31/12/24]
 
 7. CORE: Vote on an article
 
