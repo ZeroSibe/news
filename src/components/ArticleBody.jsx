@@ -3,7 +3,6 @@ import { formatDate } from "../utils/utils";
 import ArticleBtns from "./ArticleBtns";
 
 export default function ArticleBody({ article }) {
-  console.log(article);
   const {
     article_id,
     body,

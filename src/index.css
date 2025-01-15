@@ -5,6 +5,7 @@
   --text-colour: #787878;
   --header-colour: #000000;
   --header-txt-colour: #ffffff;
+  --mini-card-header: #525252;
   --clr-main-font: #333333;
   --clr-light-grey: #4f4f4f;
   --clr-med-grey: #ffffff4d;
@@ -18,11 +19,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: var(--text-colour);
 }
 
 html {
   font-size: 16px;
+  color: var(--text-colour);
 }
 
 body {
@@ -33,13 +34,10 @@ body {
 
 main {
   line-height: 1.5rem;
-  margin-top: 12rem;
+  margin-top: 5rem;
 }
 
 .main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   padding-bottom: 1rem;
   background-color: var(--header-colour);
@@ -72,9 +70,12 @@ main {
   border-bottom: 1px solid var(--clr-med-grey);
 }
 
-.red-border {
-  border-top: 4px solid red;
-  border-bottom: 4px solid red;
+.grey-btm-border {
+  border-bottom: 2px solid var(--clr-main-font);
+}
+
+.light-grey-btm-border {
+  border-bottom: 1px solid var(--clr-light-blue);
 }
 
 .main-nav li {
@@ -116,7 +117,7 @@ main {
   color: var(--clr-main-font);
   text-align: center;
   font-size: 2rem;
-  margin-top: 14rem;
+  margin-top: 5rem;
   margin-bottom: 5rem;
   line-height: 2rem;
 }
@@ -126,6 +127,20 @@ main {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 1rem;
+}
+
+.sub-section-header {
+  color: var(--clr-main-font);
+  text-align: center;
+  font-size: 1.5rem;
+  padding-bottom: 0.25rem;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+}
+
+.comment-div{
+  text-align: center;
 }
 
 .article-header {
@@ -162,6 +177,26 @@ main {
 .article-list li:hover,
 .article-list li:focus-visible {
   box-shadow: 0rem 1rem 1rem hsl(100, 27%, 2%);
+}
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.comment-card {
+  text-align: left;
+  position: relative;
+  margin: 1rem;
+}
+
+.mini-header {
+  text-align: left;
+  position: relative;
+  margin-bottom: 0.5rem;
+  color: var(--mini-card-header);
+  font-size: 0.8rem;
 }
 
 .article-img {
@@ -201,6 +236,20 @@ main {
 .article-btns button:hover,
 .article-btns button:focus-visible {
   background-color: var(--clr-light-blue);
+}
+
+.comment-btns button {
+  margin: 0.25rem;
+  border-radius: 30px;
+  width: 4rem;
+  height: 1.5rem;
+  cursor: pointer;
+  background-color: #6b7b92;
+}
+
+.comment-btns button:hover,
+.comment-btns button:focus-visible {
+  background-color: var(--clr-med-grey);
 }
 
 .title-link {
