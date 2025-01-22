@@ -30,7 +30,11 @@ export default function ArticleCard({ article }) {
         />
         <h3>{title}</h3>
       </Link>
-      <ArticleBtns votes={votes} comment_count={comment_count} />
+      <ArticleBtns
+        votes={votes}
+        comment_count={comment_count}
+        articleId={article_id}
+      />
     </section>
   );
 }

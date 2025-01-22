@@ -139,7 +139,7 @@ main {
   line-height: 2rem;
 }
 
-.comment-div{
+.comment-div {
   text-align: center;
 }
 
@@ -223,7 +223,7 @@ main {
   cursor: pointer;
 }
 
-.article-btns button {
+.article-btns {
   margin-right: 0.5rem;
   width: 5rem;
   height: 2rem;
@@ -231,20 +231,50 @@ main {
   cursor: pointer;
   background-color: var(--header-txt-colour);
   color: var(--header-colour);
+  border: 1px solid black;
 }
 
-.article-btns button:hover,
-.article-btns button:focus-visible {
+.vote-btns {
+  margin-right: 0.5rem;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 30px;
+  background-color: var(--header-txt-colour);
+  color: var(--header-colour);
+  border: 1px solid black;
+  font-size: 13px;
+  font-family: Arial;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vote-btns button {
+  border: 0;
+  padding: 1px;
+  border-radius: 30px;
+  margin: 0.25rem;
+  cursor: pointer;
+}
+
+.article-btns:hover,
+.article-btns:focus-visible,
+.vote-btns button:hover {
   background-color: var(--clr-light-blue);
 }
 
-.comment-btns button {
+.vote_comment,
+.delete_comment {
   margin: 0.25rem;
   border-radius: 30px;
   width: 4rem;
   height: 1.5rem;
   cursor: pointer;
   background-color: #6b7b92;
+}
+
+.delete_comment {
+  background-color: #92706b;
 }
 
 .comment-btns button:hover,

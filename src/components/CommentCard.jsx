@@ -11,7 +11,7 @@ export default function CommentCard({ comment }) {
         {author} - {formatCardDate(created_at)}
       </h3>
       <p>{body}</p>
-      <CommentCardBtns votes={votes} />
+      <CommentCardBtns votes={votes} author={author} />
     </div>
   );
 }

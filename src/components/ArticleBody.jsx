@@ -28,7 +28,11 @@ export default function ArticleBody({ article }) {
       </p>
 
       <p className="article-para">{body}</p>
-      <ArticleBtns votes={votes} comment_count={comment_count} />
+      <ArticleBtns
+        votes={votes}
+        comment_count={comment_count}
+        articleId={article_id}
+      />
     </article>
   );
 }
