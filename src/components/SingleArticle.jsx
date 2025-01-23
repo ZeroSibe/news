@@ -5,15 +5,13 @@ import Loading from "./Loading";
 import ErrorSection from "./ErrorSection";
 import ArticleBody from "./ArticleBody";
 import CommentList from "./CommentList";
+import ArticleComments from "./ArticleComments";
 
 export default function SingleArticle() {
   const { article_id } = useParams();
   const [article, setArticle] = useState(null);
   const [articleError, setArticleError] = useState(null);
   const [loadingArticle, setLoadingArticle] = useState(true);
-  const [comments, setComments] = useState(null);
-  const [commentsErr, setCommentsErr] = useState(null);
-  const [loadingComments, setLoadingComments] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,20 +26,6 @@ export default function SingleArticle() {
       .catch((err) => {
         setArticleError(err);
         setLoadingArticle(false);
-      });
-  }, [article_id]);
-
-  useEffect(() => {
-    setCommentsErr(null);
-    setLoadingComments(true);
-    getCommentsById(article_id)
-      .then((comments) => {
-        setComments(comments);
-        setLoadingComments(false);
-      })
-      .catch((err) => {
-        setCommentsErr(err);
-        setLoadingComments(false);
       });
   }, [article_id]);
 
@@ -63,13 +47,7 @@ export default function SingleArticle() {
         <ArticleBody article={article} />
       )}
 
-      {loadingComments ? (
-        <Loading />
-      ) : commentsErr ? (
-        <ErrorSection error={commentsErr} />
-      ) : (
-        <CommentList comments={comments} />
-      )}
+      <ArticleComments article_id={article_id} />
     </div>
   );
 }

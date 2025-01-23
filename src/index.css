@@ -243,7 +243,7 @@ main {
   color: var(--header-colour);
   border: 1px solid black;
   font-size: 13px;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -270,7 +270,7 @@ main {
   width: 4rem;
   height: 1.5rem;
   cursor: pointer;
-  background-color: #6b7b92;
+  background-color: #98a7bc;
 }
 
 .delete_comment {
@@ -289,6 +289,53 @@ main {
 .title-link:hover,
 .title-link:focus-visible {
   text-decoration: underline;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.comment-form textarea {
+  height: 5rem;
+  width: 100%;
+  margin: 0.25rem 0rem 0.5rem 0rem;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  border: 0.15rem solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: vertical;
+  font-size: 16px;
+  font-family: "Lexend", sans-serif;
+  line-height: 1.5rem;
+}
+
+.comment-form button {
+  width: 10rem;
+  height: 2rem;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: #98a7bc;
+}
+
+.comment-form button:hover,
+.comment-form button:focus-visible {
+  background-color: var(--clr-med-grey);
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.error-container {
+  border: 0.15rem solid #ccc;
+  background-color: #f5d8d8;
+  color: rgb(0, 0, 0);
 }
 
 @media only screen and (min-width: 360px) {

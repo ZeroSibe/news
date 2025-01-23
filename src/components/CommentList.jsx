@@ -4,7 +4,6 @@ import CommentCard from "./CommentCard";
 export default function CommentList({ comments }) {
   return (
     <section className="content-section">
-      <h2 className="sub-section-header grey-btm-border">Comments</h2>
       {comments.length > 0 ? (
         <ul className="comment-list">
           {comments.map((comment) => {
