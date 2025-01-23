@@ -6,8 +6,6 @@ News is a social news aggregation, web content rating and discussion website. Ne
 
 ## ToDo
 
-7. CORE: Vote on an article [17/01/25]
-
 8. CORE: Post a new comment to an existing article
 
 9. CORE: Delete comments

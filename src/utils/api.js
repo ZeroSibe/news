@@ -29,3 +29,11 @@ export const updateArticleVotes = (articleId, voteNum) => {
       return res.data.article.votes;
     });
 };
+
+export const postComment = (articleId, username, body) => {
+  return api
+    .post(`/articles/${articleId}/comments`, { username, body })
+    .then((res) => {
+      return res.data.comment;
+    });
+};
