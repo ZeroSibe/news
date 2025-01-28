@@ -32,7 +32,7 @@ export default function CommentAdder({ article_id, setComments }) {
         setNewComment("");
       })
       .catch((error) => {
-        setError(error);
+        setError("Could not post comment, please try again later");
         setCommentResponse("failed to post comment");
       })
       .finally(() => {

@@ -24,7 +24,7 @@ export default function SingleArticle() {
         window.scrollTo(0, 0);
       })
       .catch((err) => {
-        setArticleError(err);
+        setArticleError("Could not load this article, please try agian later");
         setLoadingArticle(false);
       });
   }, [article_id]);

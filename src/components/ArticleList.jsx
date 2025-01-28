@@ -18,7 +18,7 @@ export default function ArticleList() {
         setIsLoading(false);
       })
       .catch((err) => {
-        setError(err);
+        setError("An error occured, please try again later");
         setIsLoading(false);
       });
   }, []);

@@ -19,7 +19,8 @@ export default function ArticleComments({ article_id }) {
         setLoading(false);
       })
       .catch((err) => {
-        setError(err);
+        console.log(err);
+        setError("Could not load comments, please try again later");
         setLoading(false);
       });
   }, [article_id]);

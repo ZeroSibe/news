@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CommentCard from "./CommentCard";
 
 export default function CommentList({ comments }) {
