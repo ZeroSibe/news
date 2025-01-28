@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import ArticleList from "./components/ArticleList";
 import SingleArticle from "./components/SingleArticle";
+import TopicList from "./components/TopicList";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<ArticleList />} />
           <Route path="/articles/:article_id" element={<SingleArticle />} />
+          <Route path="/topics" element={<TopicList />} />
         </Routes>
       </main>
     </div>
