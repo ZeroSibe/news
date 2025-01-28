@@ -17,6 +17,11 @@ export default function Header() {
               Articles
             </Link>
           </li>
+          <li>
+            <Link to="/topics" className="nav-link">
+              Topics
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

@@ -42,3 +42,7 @@ export const formatCardDate = (date) => {
     }
   }
 };
+
+export const capitaliseTitle = (title) => {
+  return title[0].toUpperCase() + title.slice(1);
+};

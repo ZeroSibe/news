@@ -3,16 +3,18 @@ import { getArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
 import ErrorSection from "./ErrorSection";
+import { useSearchParams } from "react-router-dom";
 
 export default function ArticleList() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     setIsLoading(true);
     setError(null);
-    getArticles()
+    getArticles(searchParams)
       .then((articles) => {
         setArticles(articles);
         setIsLoading(false);
@@ -21,7 +23,7 @@ export default function ArticleList() {
         setError("An error occured, please try again later");
         setIsLoading(false);
       });
-  }, []);
+  }, [searchParams]);
 
   return (
     <div className="container">

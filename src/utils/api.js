@@ -4,8 +4,8 @@ const api = axios.create({
   baseURL: "https://news-api-apvv.onrender.com/api",
 });
 
-export const getArticles = () => {
-  return api.get("/articles").then((res) => {
+export const getArticles = (filterTerm) => {
+  return api.get("/articles", { params: filterTerm }).then((res) => {
     return res.data.articles;
   });
 };
@@ -40,4 +40,10 @@ export const postComment = (articleId, username, body) => {
 
 export const deleteCommentById = (commentId) => {
   return api.delete(`/comments/${commentId}`);
+};
+
+export const getTopics = () => {
+  return api.get("/topics").then((res) => {
+    return res.data.topics;
+  });
 };

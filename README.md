@@ -6,9 +6,7 @@ News is a social news aggregation, web content rating and discussion website. Ne
 
 ## ToDo
 
-10. CORE: View a separate page for each topic with a list of related articles [28/01/25]
-
-11. CORE: Sort articles
+11. CORE: Sort articles [28/01/25]
 
 12. CORE: Error handling
 
