@@ -3,13 +3,11 @@ import { getArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
 import ErrorSection from "./ErrorSection";
-import { useSearchParams } from "react-router-dom";
 
-export default function ArticleList() {
+export default function ArticleList({ searchParams }) {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     setIsLoading(true);
@@ -27,7 +25,6 @@ export default function ArticleList() {
 
   return (
     <div className="container">
-      <h2 className="container-header">Articles</h2>
       {error && <ErrorSection error={error} />}
       {isLoading && <Loading />}
       <ul className="article-list">

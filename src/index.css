@@ -73,6 +73,9 @@ main {
 .grey-btm-border {
   border-bottom: 2px solid var(--clr-main-font);
 }
+.grey-tp-border {
+  border-top: 2px solid var(--clr-main-font);
+}
 
 .light-grey-btm-border {
   border-bottom: 1px solid var(--clr-light-blue);
@@ -244,6 +247,26 @@ main {
   font-size: 0.88rem;
 }
 
+.sortby-btns {
+  flex-direction: column;
+}
+
+.horizontal-align-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  font-size: 0.88rem;
+}
+
+.sortby-form {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
 .nav-btn {
   margin-bottom: 1rem;
   background: none;
@@ -253,7 +276,9 @@ main {
   cursor: pointer;
 }
 
-.article-btns {
+.article-btns,
+.sortby-btn,
+.order-btn {
   margin-right: 0.5rem;
   width: 5rem;
   height: 2rem;
@@ -262,6 +287,40 @@ main {
   background-color: var(--header-txt-colour);
   color: var(--header-colour);
   border: 1px solid black;
+}
+
+.sortby-btn {
+  margin-top: 5px;
+  box-shadow: 0 3px #999;
+}
+
+.sortby-btn:active {
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
+
+.order-btn {
+  margin-left: 0.5rem;
+  background-color: #98a7bc;
+  color: black;
+  box-shadow: 0 3px #999;
+}
+
+.order-btn:active {
+  box-shadow: 0 1px #666;
+  transform: translateY(1px);
+}
+
+.sortby-btn:hover,
+.sortby-btn:focus-visible,
+.order-btn:hover,
+.order-btn:focus-visible {
+  background-color: var(--text-colour);
+}
+
+.sortby-btn.active-btn {
+  background-color: #98a7bc;
+  color: black;
 }
 
 .vote-btns {
@@ -371,12 +430,14 @@ main {
   color: rgb(0, 0, 0);
 }
 
-@media only screen and (min-width: 360px) {
+@media only screen and (min-width: 475px) {
   html {
     font-size: 18px;
   }
-
   .article-list li {
     max-width: 800px;
+  }
+  .sortby-btns {
+    flex-direction: row;
   }
 }
