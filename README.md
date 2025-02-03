@@ -6,9 +6,7 @@ News is a social news aggregation, web content rating and discussion website. Ne
 
 ## ToDo
 
-11. CORE: Sort articles [28/01/25]
-
-12. CORE: Error handling
+12. CORE: Error handling [03/02/25]
 
 13. CORE: Deploy app
 
