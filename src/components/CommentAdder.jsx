@@ -32,8 +32,17 @@ export default function CommentAdder({ article_id, setComments }) {
         setNewComment("");
       })
       .catch((error) => {
-        setError("Could not post comment, please try again later");
-        setCommentResponse("failed to post comment");
+        console.log(error);
+        if (error.response.status === 404) {
+          setError(`${error.response.data.msg}. Please check your login`);
+        } else if (error.response.status === 400) {
+          setError(
+            `${setError(`Please check your input. ${error.response.data.msg}`)}`
+          );
+        } else {
+          setError("Could not post comment, please try again later");
+        }
+        setCommentResponse("...failed to post comment");
       })
       .finally(() => {
         setIsDisabled(false);
@@ -58,8 +67,8 @@ export default function CommentAdder({ article_id, setComments }) {
           Post Comment
         </button>
       </div>
-      {commentResponse && <p>{commentResponse}</p>}
       {error && <ErrorSection error={error} />}
+      {commentResponse && <p>{commentResponse}</p>}
     </form>
   );
 }

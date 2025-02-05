@@ -46,3 +46,8 @@ export const formatCardDate = (date) => {
 export const capitaliseTitle = (title) => {
   return title[0].toUpperCase() + title.slice(1);
 };
+
+export const validTopicList = ["coding", "football", "cooking"];
+export const isValidTopic = (topicValue) => {
+  return validTopicList.includes(topicValue);
+};
