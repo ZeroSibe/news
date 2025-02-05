@@ -5,34 +5,29 @@ export default function SortArticles({ setSearchParams, searchParams }) {
   const [activeOrder, setActiveOrder] = useState("Descending");
 
   useEffect(() => {
-    const orderValue = searchParams.get("order");
-    orderValue === "asc"
-      ? setActiveOrder("Ascending")
-      : setActiveOrder("Descending");
+    const orderValue = searchParams.get("order") || "desc";
+    const sortByValue = searchParams.get("sort_by") || "created_at";
 
-    const sortByValue = searchParams.get("sort_by");
-    if (!["created_at", "comment_count", "votes"].includes(sortByValue)) {
-      setActiveSortby("created_at");
-    } else {
-      setActiveSortby(sortByValue);
-    }
+    setActiveOrder(orderValue === "asc" ? "Ascending" : "Descending");
+    setActiveSortby(sortByValue);
   }, [searchParams]);
 
   function handleSortBy(e) {
+    const selectedValue = e.target.value;
     setSearchParams((params) => {
-      const selectedValue = e.target.value;
       params.set("sort_by", selectedValue);
       return params;
     });
+    setActiveSortby(selectedValue);
   }
 
   function handleOrder(e) {
     const newOrder = activeOrder === "Descending" ? "asc" : "desc";
-    setActiveOrder(newOrder === "asc" ? "Ascending" : "Descending");
     setSearchParams((params) => {
       params.set("order", newOrder);
       return params;
     });
+    setActiveOrder(newOrder === "asc" ? "Ascending" : "Descending");
   }
 
   return (

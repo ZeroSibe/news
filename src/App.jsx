@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import SingleArticle from "./components/SingleArticle";
 import TopicList from "./components/TopicList";
 import ArticlesPage from "./components/ArticlesPage";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/articles/:article_id" element={<SingleArticle />} />
           <Route path="/topics" element={<TopicList />} />
+          <Route path="*" element={<ErrorPage error="404 Page Not Found" />} />
         </Routes>
       </main>
     </div>
