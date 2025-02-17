@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
 
 export default function Header() {
+  const { user } = useContext(UserContext);
   return (
     <header className="main-header">
       <h1 className="app-name">NEWS</h1>
@@ -22,6 +24,19 @@ export default function Header() {
               Topics
             </Link>
           </li>
+          {!user ? (
+            <li>
+              <Link to="/login" className="nav-link">
+                Login
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link to="/my-profile" className="nav-link">
+                Profile
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </header>

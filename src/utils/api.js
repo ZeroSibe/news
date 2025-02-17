@@ -47,3 +47,9 @@ export const getTopics = () => {
     return res.data.topics;
   });
 };
+
+export const getUserByUsername = (username) => {
+  return api.get(`/users/${username}`).then((res) => {
+    return res.data.user;
+  });
+};

@@ -32,7 +32,6 @@ export default function CommentAdder({ article_id, setComments }) {
         setNewComment("");
       })
       .catch((error) => {
-        console.log(error);
         if (error.response.status === 404) {
           setError(`${error.response.data.msg}. Please check your login`);
         } else if (error.response.status === 400) {

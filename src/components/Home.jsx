@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className="container center-columns">
       <h2 className="container-header">Welcome to the News</h2>
       <section className="content-section transparent-border">
         <h3 className="section-header">ABOUT</h3>
