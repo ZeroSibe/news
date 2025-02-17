@@ -7,7 +7,7 @@ import ErrorPage from "./ErrorPage";
 import { isValidTopic } from "../utils/utils";
 import { Link } from "react-router-dom";
 
-export default function ArticleList({ searchParams }) {
+export default function ArticleList({ searchParams, username }) {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,6 +15,7 @@ export default function ArticleList({ searchParams }) {
   useEffect(() => {
     setError(null);
     setIsLoading(true);
+
     const orderValue = searchParams.get("order") || "desc";
     const sortByValue = searchParams.get("sort_by") || "created_at";
     const topicValue = searchParams.get("topic");
@@ -37,7 +38,10 @@ export default function ArticleList({ searchParams }) {
 
     getArticles(searchParams)
       .then((articles) => {
-        setArticles(articles);
+        const filteredArticles = username
+          ? articles.filter((article) => article.author === username)
+          : articles;
+        setArticles(filteredArticles);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -50,7 +54,7 @@ export default function ArticleList({ searchParams }) {
         }
         setIsLoading(false);
       });
-  }, [searchParams]);
+  }, [searchParams, username]);
 
   return (
     <div className="container">
