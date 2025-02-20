@@ -2,13 +2,12 @@
 
 ## Hosted Site
 
-
 ---
 
--[About NEWS](#about-news) 
--[Login Details](#login-details)
--[Prerequisites](#prerequisites)
--[Project Set Up](#project-set-up)
+- [About NEWS](#about-news)
+- [Login Details](#login-details)
+- [Prerequisites](#prerequisites)
+- [Project Set Up](#project-set-up)
 
 ---
 
