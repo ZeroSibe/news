@@ -70,6 +70,12 @@ main {
   border-bottom: 1px solid var(--clr-med-grey);
 }
 
+.post-article {
+  border: 1px solid black;
+  margin: 1rem;
+  width: 250px;
+}
+
 .grey-btm-border {
   border-bottom: 2px solid var(--clr-main-font);
 }
@@ -250,6 +256,17 @@ main {
   width: 100%;
   border: solid white;
   border-radius: 20px;
+}
+
+.align-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.red-ast {
+  color: red;
+  font-size: 0.7rem;
+  margin-left: 0.2rem;
 }
 
 .horizontal-align {
@@ -490,7 +507,7 @@ main {
   box-sizing: border-box;
   border: 0.15rem solid #ccc;
   border-radius: 4px;
-  background-color: #f8f8f8;
+
   font-size: 16px;
   font-family: "Lexend", sans-serif;
 }
@@ -503,17 +520,17 @@ main {
   box-sizing: border-box;
   border: 0.15rem solid #ccc;
   border-radius: 4px;
-  background-color: #f8f8f8;
+
   font-size: 16px;
   font-family: "Lexend", sans-serif;
 }
 
 .invalid {
   border: 1px solid red;
+  background-color: #f9e9e9;
 }
 
-.comment-form textarea,
-.post-article-form textarea {
+.comment-form textarea {
   height: 5rem;
   width: 100%;
   margin: 0.25rem 0rem 1rem 0rem;
@@ -522,6 +539,20 @@ main {
   border: 0.15rem solid #ccc;
   border-radius: 4px;
   background-color: #f8f8f8;
+  resize: vertical;
+  font-size: 16px;
+  font-family: "Lexend", sans-serif;
+  line-height: 1.5rem;
+}
+
+.post-article-form textarea {
+  height: 5rem;
+  width: 100%;
+  margin: 0.25rem 0rem 1rem 0rem;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  border: 0.15rem solid #ccc;
+  border-radius: 4px;
   resize: vertical;
   font-size: 16px;
   font-family: "Lexend", sans-serif;
