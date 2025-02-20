@@ -10,6 +10,21 @@ export const getArticles = (filterTerm) => {
   });
 };
 
+export const postArticle = (articleBody) => {
+  const { author, title, body, topic, img_url } = articleBody;
+  return api
+    .post("/articles", {
+      author,
+      title,
+      body,
+      topic,
+      article_img_url: img_url || undefined,
+    })
+    .then((res) => {
+      return res.data.article;
+    });
+};
+
 export const getArticleById = (articleId) => {
   return api.get(`/articles/${articleId}`).then((res) => {
     return res.data.article;

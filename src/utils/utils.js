@@ -53,10 +53,13 @@ export const isValidTopic = (topicValue) => {
 };
 
 export const isImgUrl = (url) => {
-  const img = new Image();
-  img.src = url;
-  return new Promise((resolve) => {
-    img.onload = () => resolve(true);
-    img.onerror = () => resolve(false);
-  });
+  if (
+    /^(http(s):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/g.test(
+      url
+    )
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 };
