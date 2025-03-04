@@ -2,6 +2,10 @@
 
 ## Hosted Site
 
+[NEWS](https://news-2025.netlify.app)
+
+_Please Note it may take a while to load_
+
 ---
 
 - [About NEWS](#about-news)
@@ -74,12 +78,12 @@ The app should be available to use, via your local host normally via http://loca
 (c) Post topics
 (d) Delete Article
 
-15. ADVANCED: General Styling
+15. General Styling
 
-16. ADVANCED: Responsiveness
+16. Responsiveness
 
-17. ADVANCED: Accessibility
+17. Accessibility
 
-18. ADVANCED: User Experience
+18. User Experience
 
 19. Conclusion - chenge repo to public
