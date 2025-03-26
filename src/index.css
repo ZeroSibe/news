@@ -1,17 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lemon&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lemon&family=Lexend:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-:root {
-  --text-colour: #787878;
-  --header-colour: #000000;
-  --header-txt-colour: #ffffff;
-  --mini-card-header: #525252;
-  --clr-main-font: #333333;
-  --clr-light-grey: #4f4f4f;
-  --clr-med-grey: #ffffff4d;
-  --clr-blue: #0000ff;
-  --clr-light-blue: #6b7b92;
-}
+@import "./vars.css";
 
 *,
 *::before,
@@ -19,11 +9,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
 }
 
 html {
   font-size: 16px;
   color: var(--text-colour);
+  scroll-behavior: smooth;
 }
 
 body {
