@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React, { useEffect, useState, useRef } from "react";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { getArticleById } from "../utils/api";
 import Loading from "./Loading";
 import ErrorSection from "./ErrorSection";
@@ -14,6 +14,11 @@ export default function SingleArticle() {
   const [loadingArticle, setLoadingArticle] = useState(true);
   const [articleNotFound, setArticleNotFound] = useState(null);
   const navigate = useNavigate();
+  const commentsRef = useRef(null);
+  const location = useLocation();
+
+  const commentsHash = location.hash === "#comments";
+  console.log(location, commentsRef, commentsHash);
 
   useEffect(() => {
     setArticleNotFound(null);
@@ -23,7 +28,9 @@ export default function SingleArticle() {
       .then((article) => {
         setArticle(article);
         setLoadingArticle(false);
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (!commentsHash) {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
       })
       .catch((err) => {
         if (err.status === 404) {
@@ -37,7 +44,13 @@ export default function SingleArticle() {
         }
         setLoadingArticle(false);
       });
-  }, [article_id]);
+  }, [article_id, commentsHash]);
+
+  useEffect(() => {
+    if (!loadingArticle && commentsHash && commentsRef.current) {
+      commentsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [commentsHash, loadingArticle]);
 
   return (
     <div>
@@ -48,7 +61,7 @@ export default function SingleArticle() {
       ) : (
         <div>
           <button
-            onClick={() => navigate(-1)}
+            onClick={() => navigate("/articles")}
             aria-label="back to previous page"
             className="nav-btn"
           >
@@ -60,8 +73,9 @@ export default function SingleArticle() {
           ) : (
             <ArticleBody article={article} />
           )}
-
-          <ArticleComments article_id={article_id} />
+          <div ref={commentsRef}>
+            <ArticleComments article_id={article_id} />
+          </div>
         </div>
       )}
     </div>
